@@ -1,0 +1,1 @@
+export default function Robots(){return null;}export async function getServerSideProps({res}){const base=process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/,'');res.setHeader('Content-Type','text/plain');res.write('User-agent: *\nAllow: /\nDisallow: /api/\n'+(base?`Sitemap: ${base}/sitemap.xml\n`:''));res.end();return {props:{}};}

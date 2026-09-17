@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';
+import {FiMoon,FiSun} from 'react-icons/fi';
+export default function ThemeContainer(){const [theme,setTheme]=useState('light');useEffect(()=>{try{const saved=localStorage.getItem('ishika-theme');if(saved==='dark'){setTheme('dark');document.documentElement.dataset.theme='dark';}}catch{}},[]);function toggle(){const next=theme==='light'?'dark':'light';setTheme(next);document.documentElement.dataset.theme=next;try{localStorage.setItem('ishika-theme',next);}catch{}}return <button className="icon-button" onClick={toggle} aria-label={`Switch to ${theme==='light'?'dark':'light'} theme`}>{theme==='light'?<FiMoon/>:<FiSun/>}</button>;}

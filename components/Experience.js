@@ -1,0 +1,2 @@
+import {experience} from '../data/portfolioData';
+export default function Experience({compact=false}){return <div className="experience-list">{experience.map((item,i)=><article key={item.company}><span className="index-number">0{i+1}</span><div><p className="eyebrow">{item.context}</p><h3>{item.company}</h3><p>{item.role}</p>{!compact&&<p className="experience-description">{item.description}</p>}</div></article>)}</div>;}

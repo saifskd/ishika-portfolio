@@ -1,0 +1,3 @@
+import Head from 'next/head';
+import {seo} from '../data/portfolioData';
+export default function SEO({title=seo.title,path='/',noindex=false}){const base=process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/,'');return <Head><title>{title}</title><meta name="description" content={seo.description}/><meta property="og:title" content={title}/><meta property="og:description" content={seo.description}/><meta property="og:type" content="website"/>{base&&<><link rel="canonical" href={base+path}/><meta property="og:url" content={base+path}/><meta property="og:image" content={base+'/images/projects/shadow-ethos-magazine-mockup.jpg'}/></>}{noindex&&<meta name="robots" content="noindex"/>}</Head>;}
