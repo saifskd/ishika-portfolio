@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/static-metadata.cjs",
+    "start": "node scripts/preview.cjs",
     "lint": "next lint"
   },
   "dependencies": {
+    "core-js-pure": "^3.50.0",
     "eslint": "8.31.0",
     "eslint-config-next": "^13.1.1",
     "framer-motion": "^8.2.4",

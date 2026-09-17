@@ -1,3 +1,4 @@
+import { assetPath } from '../lib/paths';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,7 +7,7 @@ export default function BrandLogo({ priority = false }) {
     <Link href="/" className="brand-logo" aria-label="Ishika home">
       <Image
         className="brand-logo-dark"
-        src="/images/branding/ishika-logo-dark.png"
+        src={assetPath('/images/branding/ishika-logo-dark.png')}
         width={2172}
         height={724}
         alt="Ishika - Graphic Designer and Visual Creator"
@@ -16,7 +17,7 @@ export default function BrandLogo({ priority = false }) {
       />
       <Image
         className="brand-logo-light"
-        src="/images/branding/ishika-logo-light.png"
+        src={assetPath('/images/branding/ishika-logo-light.png')}
         width={2172}
         height={724}
         alt="Ishika - Graphic Designer and Visual Creator"

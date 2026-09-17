@@ -1,3 +1,4 @@
+import { assetPath } from '../lib/paths';
 import Image from 'next/image';
 import BrandLogo from './BrandLogo';
 
@@ -10,7 +11,7 @@ export default function Footer() {
       <small className="creator-credit">
         <a href="https://saifskd.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Created by Saif — visit portfolio (opens in a new tab)">
           <span>Created by Saif</span>
-          <Image src="/images/branding/saif-sf-icon.ico" width={20} height={20} alt="SF" unoptimized />
+          <Image src={assetPath('/images/branding/saif-sf-icon.ico')} width={20} height={20} alt="SF" unoptimized />
         </a>
       </small>
     </footer>

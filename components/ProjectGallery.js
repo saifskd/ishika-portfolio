@@ -1,3 +1,4 @@
+import { assetPath } from '../lib/paths';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { FiX } from 'react-icons/fi';
@@ -35,11 +36,11 @@ export default function ProjectGallery() {
         <p className="dialog-subtitle">{project.subtitle}</p>
         <p className="dialog-description">{project.description}</p>
         {project.tools?.length > 0 && <p>{project.tools.join(' · ')}</p>}
-        {project.images.map((image, index) => <figure ref={selected.imageIndex === index ? activeImage : null} key={image.src}>
-          <Image src={image.src} width={image.width} height={image.height} alt={image.alt} sizes="(max-width: 800px) 92vw, 1000px" quality={95} />
+        {project.images.map((image, index) => <figure ref={selected.imageIndex === index ? activeImage : null} key={assetPath(image.src)}>
+          <Image src={assetPath(image.src)} width={image.width} height={image.height} alt={image.alt} sizes="(max-width: 800px) 92vw, 1000px" quality={95} />
           <figcaption>{image.title || image.alt}</figcaption>
         </figure>)}
-        {project.video && <video controls preload="metadata" src={project.video} />}
+        {project.video && <video controls preload="metadata" src={assetPath(project.video)} />}
         {project.url && <a className="text-link" href={project.url} target="_blank" rel="noreferrer">View project online ↗</a>}
       </div>
     </dialog>}

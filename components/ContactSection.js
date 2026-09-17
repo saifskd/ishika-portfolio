@@ -1,3 +1,4 @@
+import { assetPath } from '../lib/paths';
 import { FiMail, FiPhone, FiArrowUpRight } from 'react-icons/fi';
 import { contact, resume } from '../data/portfolioData';
 
@@ -13,7 +14,7 @@ export default function ContactSection() {
           <p className="eyebrow">04 / YOUR NEXT IDEA STARTS HERE</p>
           <h2 id="contact-heading">{contact.heading}</h2>
           <p>{contact.intro}</p>
-          <a href={resume.href} download className="text-link contact-resume">{resume.label} ↓</a>
+          <a href={assetPath(resume.href)} download className="text-link contact-resume">{resume.label} ↓</a>
         </div>
         <div className="contact-cards">
           {cards.map(({ label, value, href, action, Icon }) => (
